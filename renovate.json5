@@ -1,5 +1,6 @@
 {
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  skipInstalls: false,
   extends: [
     "config:recommended",
     ":pinAllExceptPeerDependencies",
@@ -9,10 +10,10 @@
     "group:vitestMonorepo",
     "packages:eslint",
     ":approveMajorUpdates",
-    "schedule:weekdays",
+    "schedule:weekdays"
   ],
   lockFileMaintenance: {
-    enabled: true,
+    enabled: true
   },
   prConcurrentLimit: 5,
   rebaseWhen: "conflicted",
@@ -21,13 +22,13 @@
   reviewers: ["team:developer"],
   vulnerabilityAlerts: {
     enabled: true,
-    labels: ["security", "dependencies", "bot"],
+    labels: ["security", "dependencies", "bot"]
   },
   packageRules: [
     {
       groupName: "primevue monorepo",
       matchSourceUrls: "https://github.com/primefaces/*",
-      groupSlug: "primevue",
-    },
-  ],
+      groupSlug: "primevue"
+    }
+  ]
 }
